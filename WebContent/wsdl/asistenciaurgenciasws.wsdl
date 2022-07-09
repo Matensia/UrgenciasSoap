@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AsistenciaUrgenciasWSService" targetNamespace="http://ws.das.ubp.edu.ar/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.das.ubp.edu.ar/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://ws.das.ubp.edu.ar/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.das.ubp.edu.ar/" version="1.0">
+
+  <xs:element name="cerrarAsistencia" type="tns:cerrarAsistencia"/>
+
+  <xs:element name="cerrarAsistenciaResponse" type="tns:cerrarAsistenciaResponse"/>
+
+  <xs:element name="guardarAsistencia" type="tns:guardarAsistencia"/>
+
+  <xs:element name="guardarAsistenciaResponse" type="tns:guardarAsistenciaResponse"/>
+
+  <xs:element name="insertarChat" type="tns:insertarChat"/>
+
+  <xs:element name="insertarChatResponse" type="tns:insertarChatResponse"/>
+
+  <xs:element name="obtenerChatsCerrados" type="tns:obtenerChatsCerrados"/>
+
+  <xs:element name="obtenerChatsCerradosResponse" type="tns:obtenerChatsCerradosResponse"/>
+
+  <xs:complexType name="guardarAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="guardarAsistenciaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cerrarAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cerrarAsistenciaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerChatsCerrados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerChatsCerradosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertarChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertarChatResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerChatsCerradosResponse">
+    <wsdl:part name="parameters" element="tns:obtenerChatsCerradosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="guardarAsistencia">
+    <wsdl:part name="parameters" element="tns:guardarAsistencia">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="guardarAsistenciaResponse">
+    <wsdl:part name="parameters" element="tns:guardarAsistenciaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cerrarAsistencia">
+    <wsdl:part name="parameters" element="tns:cerrarAsistencia">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerChatsCerrados">
+    <wsdl:part name="parameters" element="tns:obtenerChatsCerrados">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cerrarAsistenciaResponse">
+    <wsdl:part name="parameters" element="tns:cerrarAsistenciaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertarChat">
+    <wsdl:part name="parameters" element="tns:insertarChat">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertarChatResponse">
+    <wsdl:part name="parameters" element="tns:insertarChatResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AsistenciaUrgenciasWS">
+    <wsdl:operation name="guardarAsistencia">
+      <wsdl:input name="guardarAsistencia" message="tns:guardarAsistencia">
+    </wsdl:input>
+      <wsdl:output name="guardarAsistenciaResponse" message="tns:guardarAsistenciaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cerrarAsistencia">
+      <wsdl:input name="cerrarAsistencia" message="tns:cerrarAsistencia">
+    </wsdl:input>
+      <wsdl:output name="cerrarAsistenciaResponse" message="tns:cerrarAsistenciaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerChatsCerrados">
+      <wsdl:input name="obtenerChatsCerrados" message="tns:obtenerChatsCerrados">
+    </wsdl:input>
+      <wsdl:output name="obtenerChatsCerradosResponse" message="tns:obtenerChatsCerradosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarChat">
+      <wsdl:input name="insertarChat" message="tns:insertarChat">
+    </wsdl:input>
+      <wsdl:output name="insertarChatResponse" message="tns:insertarChatResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AsistenciaUrgenciasWSServiceSoapBinding" type="tns:AsistenciaUrgenciasWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="guardarAsistencia">
+      <soap:operation soapAction="urn:GuardarAsistencia" style="document"/>
+      <wsdl:input name="guardarAsistencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="guardarAsistenciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cerrarAsistencia">
+      <soap:operation soapAction="urn:CerrarAsistencia" style="document"/>
+      <wsdl:input name="cerrarAsistencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cerrarAsistenciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerChatsCerrados">
+      <soap:operation soapAction="urn:ObtenerChatsCerrados" style="document"/>
+      <wsdl:input name="obtenerChatsCerrados">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerChatsCerradosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarChat">
+      <soap:operation soapAction="urn:InsertarChat" style="document"/>
+      <wsdl:input name="insertarChat">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertarChatResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AsistenciaUrgenciasWSService">
+    <wsdl:port name="AsistenciaUrgenciasWSPort" binding="tns:AsistenciaUrgenciasWSServiceSoapBinding">
+      <soap:address location="http://localhost:9090/AsistenciaUrgenciasWSPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

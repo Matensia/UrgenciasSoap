@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PingUrgenciasWSService" targetNamespace="http://ws.das.ubp.edu.ar/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.das.ubp.edu.ar/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://ws.das.ubp.edu.ar/" version="1.0" xmlns:tns="http://ws.das.ubp.edu.ar/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getPing" type="tns:getPing"/>
+
+  <xs:element name="getPingResponse" type="tns:getPingResponse"/>
+
+  <xs:complexType name="getPing">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getPingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPingResponse">
+    <wsdl:part name="parameters" element="tns:getPingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPing">
+    <wsdl:part name="parameters" element="tns:getPing">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PingUrgenciasWS">
+    <wsdl:operation name="getPing">
+      <wsdl:input name="getPing" message="tns:getPing">
+    </wsdl:input>
+      <wsdl:output name="getPingResponse" message="tns:getPingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PingUrgenciasWSServiceSoapBinding" type="tns:PingUrgenciasWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPing">
+      <soap:operation soapAction="urn:GetPing" style="document"/>
+      <wsdl:input name="getPing">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PingUrgenciasWSService">
+    <wsdl:port name="PingUrgenciasWSPort" binding="tns:PingUrgenciasWSServiceSoapBinding">
+      <soap:address location="http://localhost:8080/UrgenciasSoap/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

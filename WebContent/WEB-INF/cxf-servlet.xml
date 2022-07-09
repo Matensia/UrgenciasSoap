@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<jaxws:endpoint xmlns:tns="http://ws.das.ubp.edu.ar/"
+		id="asistenciaurgenciasws"
+		implementor="ar.edu.ubp.das.ws.AsistenciaUrgenciasWS"
+		wsdlLocation="wsdl/asistenciaurgenciasws.wsdl"
+		endpointName="tns:AsistenciaUrgenciasWSPort"
+		serviceName="tns:AsistenciaUrgenciasWSService"
+		address="/AsistenciaUrgenciasWSPort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+	<jaxws:endpoint xmlns:tns="http://ws.das.ubp.edu.ar/"
+		id="pingurgenciasws" implementor="ar.edu.ubp.das.ws.PingUrgenciasWS"
+		wsdlLocation="wsdl/pingurgenciasws.wsdl"
+		endpointName="tns:PingUrgenciasWSPort"
+		serviceName="tns:PingUrgenciasWSService"
+		address="/PingUrgenciasWSPort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+	<jaxws:endpoint xmlns:tns="http://ws.das.ubp.edu.ar/"
+		id="tokenurgenciasws" implementor="ar.edu.ubp.das.ws.TokenUrgenciasWS"
+		wsdlLocation="wsdl/tokenurgenciasws.wsdl"
+		endpointName="tns:TokenUrgenciasWSPort"
+		serviceName="tns:TokenUrgenciasWSService"
+		address="/TokenUrgenciasWSPort">
+		<jaxws:features>
+			<bean class="org.apache.cxf.feature.LoggingFeature" />
+		</jaxws:features>
+	</jaxws:endpoint>
+</beans>
